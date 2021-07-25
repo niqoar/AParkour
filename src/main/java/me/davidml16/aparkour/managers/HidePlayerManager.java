@@ -51,11 +51,21 @@ public class HidePlayerManager {
     public void setPlayerState(Player player, PlayerState playerState) {
         if (playerState == PlayerState.HIDDEN) {
             hide(player);
-            player.sendMessage(main.getLanguageHandler().getMessage("Messages.HideItemHide"));
+            
+            String hideitemhide = main.getLanguageHandler().getMessage("Messages.HideItemHide");
+            
+            if(hideitemhide.length() > 0) {
+                player.sendMessage(hideitemhide);
+            }
         }
         else {
             show(player);
-            player.sendMessage(main.getLanguageHandler().getMessage("Messages.HideItemShow"));
+            
+            String hideitemshow = main.getLanguageHandler().getMessage("Messages.HideItemShow");
+            
+            if(hideitemshow.length() > 0) {
+                player.sendMessage(hideitemshow);
+            }
         }
 
         playerStates.put(player.getName(), playerState);
